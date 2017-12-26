@@ -14,8 +14,11 @@ public class Uppercase {
         JavaSparkContext sc = new JavaSparkContext(conf);
 
         JavaRDD<String> lines = sc.textFile("in/uppercase.text");
+//        System.out.println(lines.first());
         JavaRDD<String> lowerCaseLines = lines.map(line -> line.toUpperCase());
 
+//        System.out.println(lowerCaseLines.first());
+//        System.out.println(lowerCaseLines.toString());
         lowerCaseLines.saveAsTextFile("out/uppercase.text");
     }
 }

@@ -16,6 +16,7 @@ public class WordCount {
 
         Logger.getLogger("org").setLevel(Level.ERROR);
         SparkConf conf = new SparkConf().setAppName("wordCounts").setMaster("local[3]");
+
         JavaSparkContext sc = new JavaSparkContext(conf);
 
         JavaRDD<String> lines = sc.textFile("in/word_count.text");
